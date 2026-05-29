@@ -1,0 +1,17 @@
+# Data handling
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+
+# Traditional Machine Learning
+scikit-learn
+xgboost
+lightgbm
+joblib
+
+# Notebook
+jupyter
+ipykernel

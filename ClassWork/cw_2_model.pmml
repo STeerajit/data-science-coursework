@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="teesinad">
+    <Application name="KNIME" version="5.4.4"/>
+  </Header>
+  <DataDictionary numberOfFields="6">
+    <DataField name="temperature" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="18.03" rightMargin="34.99"/>
+    </DataField>
+    <DataField name="humidity" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="30.0" rightMargin="90.0"/>
+    </DataField>
+    <DataField name="pressure" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="980.0" rightMargin="1050.0"/>
+    </DataField>
+    <DataField name="fan_speed" optype="categorical" dataType="string">
+      <Value value="1"/>
+      <Value value="3"/>
+      <Value value="2"/>
+      <Value value="0"/>
+    </DataField>
+    <DataField name="timestamp" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.751040059166E12" rightMargin="1.751210914954E12"/>
+    </DataField>
+    <DataField name="date" optype="categorical" dataType="string"/>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="binarySplit" missingValueStrategy="none" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="temperature" invalidValueTreatment="asIs"/>
+      <MiningField name="humidity" invalidValueTreatment="asIs"/>
+      <MiningField name="pressure" invalidValueTreatment="asIs"/>
+      <MiningField name="timestamp" invalidValueTreatment="asIs"/>
+      <MiningField name="fan_speed" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="3" recordCount="994.0">
+      <True/>
+      <ScoreDistribution value="3" recordCount="402.0"/>
+      <ScoreDistribution value="2" recordCount="283.0"/>
+      <ScoreDistribution value="1" recordCount="164.0"/>
+      <ScoreDistribution value="0" recordCount="145.0"/>
+      <Node id="1" score="2" recordCount="693.0">
+        <SimplePredicate field="temperature" operator="lessOrEqual" value="30.005000000000003"/>
+        <ScoreDistribution value="3" recordCount="101.0"/>
+        <ScoreDistribution value="2" recordCount="283.0"/>
+        <ScoreDistribution value="1" recordCount="164.0"/>
+        <ScoreDistribution value="0" recordCount="145.0"/>
+        <Node id="2" score="2" recordCount="592.0">
+          <SimplePredicate field="humidity" operator="lessOrEqual" value="80.5"/>
+          <ScoreDistribution value="3" recordCount="0.0"/>
+          <ScoreDistribution value="2" recordCount="283.0"/>
+          <ScoreDistribution value="1" recordCount="164.0"/>
+          <ScoreDistribution value="0" recordCount="145.0"/>
+          <Node id="3" score="1" recordCount="436.0">
+            <SimplePredicate field="temperature" operator="lessOrEqual" value="27.03"/>
+            <ScoreDistribution value="3" recordCount="0.0"/>
+            <ScoreDistribution value="2" recordCount="127.0"/>
+            <ScoreDistribution value="1" recordCount="164.0"/>
+            <ScoreDistribution value="0" recordCount="145.0"/>
+            <Node id="4" score="1" recordCount="339.0">
+              <SimplePredicate field="humidity" operator="lessOrEqual" value="70.5"/>
+              <ScoreDistribution value="3" recordCount="0.0"/>
+              <ScoreDistribution value="2" recordCount="30.0"/>
+              <ScoreDistribution value="1" recordCount="164.0"/>
+              <ScoreDistribution value="0" recordCount="145.0"/>
+              <Node id="5" score="0" recordCount="230.0">
+                <SimplePredicate field="temperature" operator="lessOrEqual" value="24.0"/>
+                <ScoreDistribution value="3" recordCount="0.0"/>
+                <ScoreDistribution value="2" recordCount="30.0"/>
+                <ScoreDistribution value="1" recordCount="55.0"/>
+                <ScoreDistribution value="0" recordCount="145.0"/>
+                <Node id="6" score="0" recordCount="175.0">
+                  <SimplePredicate field="humidity" operator="lessOrEqual" value="60.5"/>
+                  <ScoreDistribution value="3" recordCount="0.0"/>
+                  <ScoreDistribution value="2" recordCount="30.0"/>
+                  <ScoreDistribution value="1" recordCount="0.0"/>
+                  <ScoreDistribution value="0" recordCount="145.0"/>
+                  <Node id="7" score="2" recordCount="30.0">
+                    <SimplePredicate field="pressure" operator="lessOrEqual" value="989.5"/>
+                    <ScoreDistribution value="3" recordCount="0.0"/>
+                    <ScoreDistribution value="2" recordCount="30.0"/>
+                    <ScoreDistribution value="1" recordCount="0.0"/>
+                    <ScoreDistribution value="0" recordCount="0.0"/>
+                  </Node>
+                  <Node id="8" score="0" recordCount="145.0">
+                    <SimplePredicate field="pressure" operator="greaterThan" value="989.5"/>
+                    <ScoreDistribution value="3" recordCount="0.0"/>
+                    <ScoreDistribution value="2" recordCount="0.0"/>
+                    <ScoreDistribution value="1" recordCount="0.0"/>
+                    <ScoreDistribution value="0" recordCount="145.0"/>
+                  </Node>
+                </Node>
+                <Node id="9" score="1" recordCount="55.0">
+                  <SimplePredicate field="humidity" operator="greaterThan" value="60.5"/>
+                  <ScoreDistribution value="3" recordCount="0.0"/>
+                  <ScoreDistribution value="2" recordCount="0.0"/>
+                  <ScoreDistribution value="1" recordCount="55.0"/>
+                  <ScoreDistribution value="0" recordCount="0.0"/>
+                </Node>
+              </Node>
+              <Node id="10" score="1" recordCount="109.0">
+                <SimplePredicate field="temperature" operator="greaterThan" value="24.0"/>
+                <ScoreDistribution value="3" recordCount="0.0"/>
+                <ScoreDistribution value="2" recordCount="0.0"/>
+                <ScoreDistribution value="1" recordCount="109.0"/>
+                <ScoreDistribution value="0" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="11" score="2" recordCount="97.0">
+              <SimplePredicate field="humidity" operator="greaterThan" value="70.5"/>
+              <ScoreDistribution value="3" recordCount="0.0"/>
+              <ScoreDistribution value="2" recordCount="97.0"/>
+              <ScoreDistribution value="1" recordCount="0.0"/>
+              <ScoreDistribution value="0" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="12" score="2" recordCount="156.0">
+            <SimplePredicate field="temperature" operator="greaterThan" value="27.03"/>
+            <ScoreDistribution value="3" recordCount="0.0"/>
+            <ScoreDistribution value="2" recordCount="156.0"/>
+            <ScoreDistribution value="1" recordCount="0.0"/>
+            <ScoreDistribution value="0" recordCount="0.0"/>
+          </Node>
+        </Node>
+        <Node id="13" score="3" recordCount="101.0">
+          <SimplePredicate field="humidity" operator="greaterThan" value="80.5"/>
+          <ScoreDistribution value="3" recordCount="101.0"/>
+          <ScoreDistribution value="2" recordCount="0.0"/>
+          <ScoreDistribution value="1" recordCount="0.0"/>
+          <ScoreDistribution value="0" recordCount="0.0"/>
+        </Node>
+      </Node>
+      <Node id="14" score="3" recordCount="301.0">
+        <SimplePredicate field="temperature" operator="greaterThan" value="30.005000000000003"/>
+        <ScoreDistribution value="3" recordCount="301.0"/>
+        <ScoreDistribution value="2" recordCount="0.0"/>
+        <ScoreDistribution value="1" recordCount="0.0"/>
+        <ScoreDistribution value="0" recordCount="0.0"/>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>

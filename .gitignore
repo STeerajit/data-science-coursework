@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.direnv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Embedded git repos
+PythonDataScienceHandbook/
+ClassWork/DataSciPython/PythonDataScienceHandbook/
+
+# Office docs (optional - remove if you want to track these)
+*.docx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
